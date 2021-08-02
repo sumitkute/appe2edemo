@@ -1,8 +1,10 @@
 ﻿@page
+@using System.Security.Claims
 @addTagHelper*, Microsoft.AspNetCore.Mvc.TagHelpers
 @model IndexModel
 @{
     ViewData["Title"] = "Permission Request";
+    
 }
 
 <div class="main">
@@ -15,6 +17,28 @@
                     <p>Request your permissions!</p>
                 </div>
             </div>
+            <div >
+                <div id="username" class="label">
+                </div>
+            </div>
+            @if(ClaimsPrincipal.Current != null)
+                {
+                <h1>Claims Present in the Claims Identity:</h1>
+                <table class="table-hover claim-table">
+                <tr>
+                    <th class="claim-type claim-data claim-head">Claim Type</th>
+                    <th class="claim-data claim-head">Claim Value</th>
+                </tr>
+                 @foreach (Claim claim in ClaimsPrincipal.Current.Claims)
+                {
+                   <tr>
+                      <td class="claim-type claim-data">@claim.Type</td>
+                      <td class="claim-data">@claim.Value</td>
+                   </tr>
+                }
+                
+            </table>
+                }
             <div class="signup-form">
                 <form method="POST" class="register-form" id="register-form">
                     <div class="form-row">

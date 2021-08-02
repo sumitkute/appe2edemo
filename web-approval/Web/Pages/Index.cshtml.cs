@@ -8,6 +8,7 @@ using System.Text.Json;
 using Microsoft.Extensions.Configuration;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Html;
+using System.Security.Claims;
 
 namespace DemoLogicAppApprovalWeb.Pages
 {

@@ -1,0 +1,5 @@
+{
+    "appService.preDeployTask": "publish-release",
+    "appService.deploySubpath": "bin\\Release\\netcoreapp3.1\\publish",
+    "appService.defaultWebAppToDeploy": "/subscriptions/1428e18b-8cfb-4b8a-9c6f-4d1d5484852d/resourceGroups/appsvc_windows_centralus_premium/providers/Microsoft.Web/sites/kardemoweb"
+}
